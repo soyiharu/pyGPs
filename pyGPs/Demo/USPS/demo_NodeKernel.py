@@ -28,7 +28,7 @@ def load_binary(D1,D2,reduce=False):
     D1_list = []
     D2_list = []
     n,D = x.shape
-    for i in xrange(n):
+    for i in range(n):
         if y[i,D1] == 1:
             D1_list.append(i)
         elif y[i,D2] == 1:
@@ -95,7 +95,7 @@ if __name__ == "__main__":
     N = Matrix.shape[0]
     
     # set training and test set
-    index_train = xrange(N)
+    index_train = range(N)
     index_test = [38, 81, 124, 129, 70, 190]
     index_train =  np.setdiff1d(index_train, index_test)
         
@@ -159,10 +159,10 @@ if __name__ == "__main__":
     ACC_sum = valid.ACC(predictive_class_sum, y_test)
     
     
-    print np.hstack((np.array(index_test, ndmin=2).T, y_test, predictive_class_rbf, predictive_class_diff, predictive_class_sum))
-    print 'accuracy (RBF): ' , ACC_rbf
-    print 'accuracy (DIFF): ' , ACC_diff
-    print 'accuracy (SUM): ' , ACC_sum
+    print(np.hstack((np.array(index_test, ndmin=2).T, y_test, predictive_class_rbf, predictive_class_diff, predictive_class_sum)))
+    print('accuracy (RBF): ' , ACC_rbf)
+    print('accuracy (DIFF): ' , ACC_diff)
+    print('accuracy (SUM): ' , ACC_sum)
 
 
    

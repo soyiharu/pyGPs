@@ -18,8 +18,8 @@ import numpy as np
 # you may want to read demo_GPR, demo_kernel and demo_optimization first!
 # Here, the focus is on the difference of FITC model.
 
-print ''
-print '-------------------GPR_FITC DEMO----------------------'
+print('')
+print('-------------------GPR_FITC DEMO----------------------')
 
 #----------------------------------------------------------------------
 # Load demo data (generated from Gaussians)
@@ -35,7 +35,7 @@ z = demoData['xstar']        # test data
 # Sparse GP regression (FITC) example
 #----------------------------------------------------------------------
 
-print "Example 1: default inducing points"
+print("Example 1: default inducing points")
 
 # Start from a new model 
 model = pyGPs.GPR_FITC()
@@ -50,7 +50,7 @@ model.setData(x, y)
 # model.setData(x, y, value_per_axis=10)
 
 model.optimize()
-print "Negative log marginal liklihood optimized:", round(model.nlZ,3)
+print("Negative log marginal liklihood optimized:", round(model.nlZ,3))
 
 # Prediction             
 model.predict(z)
@@ -59,8 +59,8 @@ model.plot()
 
 
 
-print '------------------------------------------------------'
-print "Example 2: user-defined inducing points"
+print('------------------------------------------------------')
+print("Example 2: user-defined inducing points")
 
 # Start from a new model 
 model = pyGPs.GPR_FITC()            
@@ -83,9 +83,9 @@ model.setPrior(mean=m, kernel=k, inducing_points=u)
 # The rest is analogous to what we have done before
 model.setData(x, y)
 model.getPosterior()
-print "Negative log marginal liklihood before optimization:", round(model.nlZ,3)
+print("Negative log marginal liklihood before optimization:", round(model.nlZ,3))
 model.optimize()
-print "Negative log marginal liklihood optimized:", round(model.nlZ,3)
+print("Negative log marginal liklihood optimized:", round(model.nlZ,3))
 
 # Prediction
 ymu, ys2, fmu, fs2, lp = model.predict(z)
@@ -93,7 +93,7 @@ ymu, ys2, fmu, fs2, lp = model.predict(z)
 model.plot()
 
 
-print '--------------------END OF DEMO-----------------------'
+print('--------------------END OF DEMO-----------------------')
 
 
 

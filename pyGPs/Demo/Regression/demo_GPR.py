@@ -27,8 +27,8 @@ import numpy as np
 
 
 
-print ''
-print '---------------------GPR DEMO-------------------------'
+print('')
+print('---------------------GPR DEMO-------------------------')
 
 #----------------------------------------------------------------------
 # Load demo data (generated from Gaussians)
@@ -41,21 +41,21 @@ z = demoData['xstar']        # test data
 #----------------------------------------------------------------------
 # A five-line example
 #----------------------------------------------------------------------
-print 'Basic Example'
+print('Basic Example')
 model = pyGPs.GPR()          # model
-print 'Before Optimization'
+print('Before Optimization')
 model.setData(x,y)
 model.predict(z)             # predict test cases (before optimization)
 model.plot()                 # and plot result
 model.optimize(x, y)         # optimize hyperparamters (default optimizer: single run minimize)
-print 'After Optimization'
+print('After Optimization')
 model.predict(z)             # predict test cases
 model.plot()                 # and plot result
 
 #----------------------------------------------------------------------
 # Now lets do another example to get more insight to the toolbox
 #----------------------------------------------------------------------
-print 'More Advanced Example (using a non-zero mean and Matern7 kernel)'
+print('More Advanced Example (using a non-zero mean and Matern7 kernel)')
 model = pyGPs.GPR()           # start from a new model
 
 # Specify non-default mean and covariance functions
@@ -95,7 +95,7 @@ model.optimize(x, y)
 #   model.fm (predictive latent means)
 #   model.fs2 (predictive latent variances)
 #   model.lp (log predictive probability)
-print 'Optimized negative log marginal likelihood:', round(model.nlZ,3)
+print('Optimized negative log marginal likelihood:', round(model.nlZ,3))
 
 
 # Predict test data
@@ -125,5 +125,5 @@ ym, ys2, fmu, fs2, lp = model.predict_with_posterior(post,z)
 # You don't need it if you optimize it later anyway
 model.setNoise( log_sigma=np.log(0.1) )
 
-print '--------------------END OF DEMO-----------------------'
+print('--------------------END OF DEMO-----------------------')
 

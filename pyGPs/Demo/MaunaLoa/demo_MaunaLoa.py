@@ -65,7 +65,7 @@ if __name__ == '__main__':
     k  = k1 + k2 + k3 + k4
 
     # STANDARD GP (prediction)
-    print 'Original CO2 Data:'
+    print('Original CO2 Data:')
     model = pyGPs.GPR()
     model.setData(x,y)
     model.plotData_1d()
@@ -79,11 +79,11 @@ if __name__ == '__main__':
     t1 = clock()
     model.predict(xs)
 
-    print 'Using Handcrafted Kernel from GPML Book:'
-    print 'Time to optimize = ', t1-t0
-    print 'Optimized mean = ', model.meanfunc.hyp
-    print 'Optimized covariance = ', model.covfunc.hyp
-    print 'Optimized liklihood = ', model.likfunc.hyp
-    print 'Final negative log marginal likelihood = ', round(model.nlZ,3)
+    print('Using Handcrafted Kernel from GPML Book:')
+    print('Time to optimize = ', t1-t0)
+    print('Optimized mean = ', model.meanfunc.hyp)
+    print('Optimized covariance = ', model.covfunc.hyp)
+    print('Optimized liklihood = ', model.likfunc.hyp)
+    print('Final negative log marginal likelihood = ', round(model.nlZ,3))
 
     model.plot()

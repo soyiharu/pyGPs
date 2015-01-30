@@ -1,4 +1,4 @@
-import valid
+from pyGPs.Validation import valid
 
 
 

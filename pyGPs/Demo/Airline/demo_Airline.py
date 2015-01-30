@@ -51,7 +51,7 @@ if __name__ == '__main__':
       # the deafult mean will be adapted to the average value of the training labels..
       # ..if you do not specify mean function by your own.
       model.optimize(x, y)
-      print _, model.nlZ
+      print(_, model.nlZ)
       model.predict(xt)
       model.plot()
 

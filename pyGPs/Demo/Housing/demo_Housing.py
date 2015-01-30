@@ -37,7 +37,7 @@ if __name__ == '__main__':
     
     model = pyGPs.GPR()
     model.getPosterior(x, y)
-    print 'Initial negative log marginal likelihood = ', round(model.nlZ,3)
+    print('Initial negative log marginal likelihood = ', round(model.nlZ,3))
     
     # train and predict
     from time import clock
@@ -49,14 +49,14 @@ if __name__ == '__main__':
     xa = (xa - np.mean(xa,axis=0))/(np.std(xa,axis=0)+1.e-16)
     ya, ys2a, fma, fs2a, lpa = model.predict(xa)
 
-    print 'Time to optimize = ', t1-t0
-    print 'Optimized mean = ', model.meanfunc.hyp
-    print 'Optimized covariance = ', model.covfunc.hyp
-    print 'Optimized liklihood = ', model.likfunc.hyp
-    print 'Final negative log marginal likelihood = ', round(model.nlZ,3)
+    print('Time to optimize = ', t1-t0)
+    print('Optimized mean = ', model.meanfunc.hyp)
+    print('Optimized covariance = ', model.covfunc.hyp)
+    print('Optimized liklihood = ', model.likfunc.hyp)
+    print('Final negative log marginal likelihood = ', round(model.nlZ,3))
 
     #HousingPlotter(range(len(y)),y,range(len(ym)),ym,ys2,range(len(y),len(y)+len(ys)),ys)
-    xm = np.array(range(len(y),len(y)+ym.shape[0]))
+    xm = np.array(list(range(len(y),len(y)+ym.shape[0])))
     ym = np.reshape(ym,(ym.shape[0],))
     zm = np.reshape(ys2,(ym.shape[0],))
 
